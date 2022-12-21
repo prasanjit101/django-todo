@@ -42,6 +42,24 @@ export function App() {
     setAddError(false);
   }
 
+  const clearTodods = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/todos/", {
+        method: "DELETE"
+      })
+      if (!response.status === 200) {
+        throw new Error("Something went wrong");
+      }
+    } catch (err) {
+      console.log(err.message);
+      setErrorMessage(err.message);
+      setFetchError(true);
+      return;
+    }
+    getAllTodos();
+    setFetchError(false);
+  }
+
   const getAllTodos = async () => {
     let response;
     try {
@@ -71,9 +89,10 @@ export function App() {
         <form onSubmit={addTodo}>
           <input className="input" type="text" name="todo_text" ref={inputTodo} />
           <div style={{ "marginTop": "5px" }}>
-            <button className="button" >Add a todo</button>
+            <button className="button" type="submit">Add a todo</button>
           </div>
         </form>
+        <button className="button" onClick={clearTodods}>Clear all todos</button>
         {addError ? (<p className="error">{errormessage}</p>) : (null)}
       </div>
     </div>

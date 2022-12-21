@@ -1,3 +1,4 @@
+from ast import Delete
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -33,6 +34,14 @@ class TodoListView(APIView):
         new_todo = received_json_data
         try:
             db.todos.insert_one(new_todo)
+            return Response({"success": True}, status=status.HTTP_200_OK)
+        except:
+            return Response({"success": True}, status=status.HTTP_404_NOT_FOUND)
+
+    def Delete(self, request):
+        # clear all todos
+        try:
+            db.todos.delete_many({})
             return Response({"success": True}, status=status.HTTP_200_OK)
         except:
             return Response({"success": True}, status=status.HTTP_404_NOT_FOUND)
