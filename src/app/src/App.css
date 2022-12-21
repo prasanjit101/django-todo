@@ -1,0 +1,79 @@
+.App {
+  /* display flex and place content in the center of the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* set the height of the page to 100% */
+  height: 100vh;
+  /* set the background color to #282c34 */
+  background-color: #282c34;
+  /* set the color of the text to white */
+  color: white;
+}
+
+.button {
+  /* set the background color to #61dafb */
+  background-color: #61dafb;
+  /* set the color of the text to black */
+  color: black;
+  /* set the border radius to 5px */
+  border-radius: 5px;
+  /* set the padding to 10px */
+  padding: 10px;
+  /* set the margin to 10px */
+  margin: 10px;
+}
+
+.input {
+  /* set the background color to #61dafb */
+  background-color: #eeeeee;
+  /* set the color of the text to black */
+  color: black;
+  /* set the border radius to 5px */
+  border-radius: 5px;
+  /* set the padding to 10px */
+  padding: 10px;
+  /* set the margin to 10px */
+  margin: 10px;
+}
+
+.d-block {
+  display: block;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
